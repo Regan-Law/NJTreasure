@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8"/>
+	<title>南京宝</title>
+	<meta content="webkit" name="renderer">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+	<meta content="" data-variable="https://breeze.cn/muban/M1156012/359/|cn||||M1156012" name="generator"/>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css"/>
+	<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" type="text/css"/>
+	<link rel="stylesheet" th:href="@{/css/lo.css}" type="text/css"/>
+</head>
+<style>
+    /*.met-member{ background-color:;}*/
+    /*.login_index{ background-color:;  }*/
+</style>
+<body>
+<div class="container met-head">
+
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 logo">
+			<ul class="list-none">
+				<li><a class="met-logo" href="#"><img alt="icon" src="/image/1506052119.png"
+				                                      th:src="@{/image/1506052119.png}"/></a></li>
+
+				<li>会员注册</li>
+
+			</ul>
+		</div>
+
+		<div class="col-xs-6 col-sm-6 user-info">
+			<ol class="breadcrumb pull-right">
+
+				<li><a href="/home" title="返回首页">返回首页</a></li>
+			</ol>
+		</div>
+	</div>
+
+</div>
+
+<div class="register_index met-member">
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${error}">
+			<span th:text="${error}"></span>
+		</div>
+		<form action="/register" class="form-register met-form" method="post">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<label>
+						<input class="form-control" data-bv-notempty="true" data-bv-notempty-message="此项不能为空"
+						       data-bv-remote="true" data-bv-remote-message="用户名已存在"
+						       data-bv-remote-url=""
+						       data-bv-stringlength="true"
+						       data-bv-stringlength-max="30"
+						       data-bv-stringlength-message="用户名必须在2-30个字符之间"
+						       data-bv-stringlength-min="2"
+						       name="username"
+						       placeholder="会员名"
+						       required
+						       type="text"
+						/>
+					</label>
+
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
+					<label>
+						<input class="form-control" data-bv-identical="true" data-bv-identical-field="confirmpassword"
+						       data-bv-identical-message="两次密码输入不一致" data-bv-notempty="true"
+						       data-bv-notempty-message="此项不能为空"
+						       data-bv-stringlength="true"
+						       data-bv-stringlength-max="30"
+						       data-bv-stringlength-message="密码必须在6-30个字符之间"
+						       data-bv-stringlength-min="6"
+
+						       name="password"
+						       placeholder="密码"
+						       required
+						       type="password"
+						>
+					</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
+					<label>
+						<input class="form-control" data-bv-identical="true" data-bv-identical-field="password"
+						       data-bv-identical-message="两次密码输入不一致" data-bv-notempty-message="此项不能为空"
+						       data-password="password"
+						       name="confirmpassword"
+						       placeholder="重复密码"
+						       required
+						       type="password"
+						>
+					</label>
+
+				</div>
+			</div>
+			<div class="form-group met-more text-muted">
+				<hr/>
+				<span>更多资料</span>
+			</div>
+			<div class="form-group met-form-choice">
+				<div class="row">
+					<div class="met-form-file-title col-md-3">公司名称</div>
+					<div class="col-md-9">
+						<label>
+							<input class="form-control" name="info_100" placeholder="公司名称" type="text" value="">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group met-form-choice">
+				<div class="row">
+					<div class="met-form-file-title col-md-3">公司传真</div>
+					<div class="col-md-9">
+						<label>
+							<input class="form-control" name="info_103" placeholder="公司传真" type="text" value="">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group met-form-choice">
+				<div class="row">
+					<div class="met-form-file-title col-md-3">公司联系地址</div>
+					<div class="col-md-9">
+						<label>
+							<input class="form-control" name="info_106" placeholder="公司联系地址" type="text" value="">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group met-form-choice">
+				<div class="row">
+					<div class="met-form-file-title col-md-3">公司联系人</div>
+					<div class="col-md-9">
+						<label>
+							<input class="form-control" name="info_109" placeholder="公司联系人" type="text" value="">
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group met-form-choice">
+				<div class="row">
+					<div class="met-form-file-title col-md-3">联系方式</div>
+					<div class="col-md-9">
+						<label>
+							<input class="form-control" name="info_112" placeholder="联系方式" type="text" value="">
+						</label>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">立即注册</button>
+			<div class="login_link"><a href="/login">已有账号？</a></div>
+		</form>
+	</div>
+</div>
+
+<footer class="container met-footer">
+	<p>南京宝管理系统</p>
+
+</footer>
+<script th:src="@{/js/seajs.js}"></script>
+<script>
+    const pub = '',
+        tem = '';
+    seajs.config({
+        paths: {
+            'pub': pub.substring(0, pub.length - 1),
+            'tem': tem.substring(0, tem.length - 1)
+        },
+        alias: {
+            "jquery": "jquery_seajs.js"
+        }
+    });
+    //seajs.use("tem/js/own"); //载入入口模块
+</script>
+</body>
+</html>

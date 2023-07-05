@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8"/>
+	<title>南京宝</title>
+	<meta content="webkit" name="renderer">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+	<meta content="" data-variable="https://breeze.cn/muban/M1156012/359/|cn||||M1156012" name="generator"/>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" type="text/css"/>
+	<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" type="text/css"/>
+	<link rel="stylesheet" th:href="@{/css/lo.css}" type="text/css"/>
+</head>
+<style>
+</style>
+<body>
+<div class="container met-head">
+
+	<div class="row">
+		<div class="col-xs-6 col-sm-6 logo">
+			<ul class="list-none">
+				<li><a class="met-logo" href=""><img alt="icon" th:src="@{/image/1506052119.png}"/></a></li>
+				<li>会员登录</li>
+
+			</ul>
+		</div>
+
+		<div class="col-xs-6 col-sm-6 user-info">
+			<ol class="breadcrumb pull-right">
+				<li><a href="/home" title="返回首页">返回首页</a></li>
+			</ol>
+		</div>
+	</div>
+
+</div>
+
+<div class="login_index met-member">
+	<div class="container">
+		<div class="alert alert-danger" role="alert" th:if="${error}">
+			<span th:text="${error}"></span>
+		</div>
+		<form action="/login" method="post">
+			<input name="gourl" type="hidden" value=""/>
+			<div class="form-group">
+				<label>
+					<input class="form-control" data-bv-notempty="true" data-bv-notempty-message="此项不能为空"
+					       id="username"
+					       name="username" placeholder="用户名/邮箱/手机"
+					       required
+					       th:value="${user.username}"
+					       type="text"
+					>
+				</label>
+			</div>
+			<div class="form-group">
+				<label>
+					<input class="form-control" data-bv-notempty="true" data-bv-notempty-message="此项不能为空"
+					       id="password"
+					       name="password" placeholder="密码"
+					       required
+					       th:value="${user.password}"
+					       type="password"
+					>
+				</label>
+			</div>
+			<div class="form-group">
+				<label>
+					<select id="type" name="type">
+						<option value="user">商户</option>
+						<option value="admin">管理员</option>
+					</select>
+				</label>
+				<div class="login_link"><a href="">忘记密码？</a></div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+				<a class="btn btn-lg btn-info btn-block" href="/register">没有账号？现在去注册</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+<footer class="container met-footer">
+	<p>南京宝管理系统</p>
+
+</footer>
+<script th:src="@{/js/seajs.js}"></script>
+<script>
+    const pub = './',
+        tem = './';
+    seajs.config({
+        paths: {
+            'pub': pub.substring(0, pub.length - 1),
+            'tem': tem.substring(0, tem.length - 1)
+        },
+        alias: {
+            "jquery": "jquery_seajs.js"
+        }
+    });
+    //seajs.use("tem/js/own"); //载入入口模块
+</script>
+</body>
+</html>
